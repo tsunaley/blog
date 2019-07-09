@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    <link rel="shortcut icon" href="../img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>使用MkDocs搭建个人博客 - Tsunaley's blog</title>
+    <link href="../css/bootstrap-3.3.7.min.css" rel="stylesheet">
+    <link href="../css/font-awesome-4.7.0.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/highlight.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/bootstrap-3.3.7.min.js"></script>
+    <script src="../js/highlight.pack.js"></script>
+    
+    <base target="_top">
+    <script>
+      var base_url = '..';
+      var is_top_frame = false;
+        
+        var pageToc = [
+          {title: "\u4f7f\u7528MkDocs\u642d\u5efa\u4e2a\u4eba\u535a\u5ba2", url: "#_top", children: [
+              {title: "\u4e00\u4e9b\u60f3\u8bf4\u7684", url: "#_1" },
+              {title: "\u73af\u5883\u51c6\u5907", url: "#_2" },
+              {title: "\u4e0b\u4e00\u6b65", url: "#_3" },
+              {title: "\u7ec6\u8282", url: "#_4" },
+              {title: "\u90e8\u7f72", url: "#_5" },
+              {title: "\u5176\u4ed6", url: "#_6" },
+          ]},
+        ];
+
+    </script>
+    <script src="../js/base.js"></script> 
+</head>
+
+<body>
+<script>
+if (is_top_frame) { $('body').addClass('wm-top-page'); }
+</script>
+
+
+
+<div class="container-fluid wm-page-content">
+  <a name="_top"></a>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../markdown/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../markdown/" class="btn btn-xs btn-link">
+        MarkDown语法
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../happyny/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../happyny/" class="btn btn-xs btn-link">
+        新年快乐
+      </a>
+    </div>
+    
+  </div>
+
+    
+
+    <h1 id="mkdocs">使用MkDocs搭建个人博客</h1>
+<blockquote>
+<p>时间：2019年1月3日</p>
+</blockquote>
+<hr />
+<h2 id="_1">一些想说的</h2>
+<p>咸鱼超终于搭好了她的博客之后表示十分开心，想着往博客里放点什么东西<br />
+（其实是遭受了一下午高数摧残之后不想背军理了）<br />
+所以咸鱼超就把搭博客的过程写写，免得以后忘了  </p>
+<hr />
+<p>这个博客是使用的MkDocs搭建的<br />
+网上也有很多相关的教程，但是我在搭建的过程中仍然遇到了很多问题<br />
+所以这里会主要写我的搭建过程</p>
+<hr />
+<h2 id="_2">环境准备</h2>
+<p>首先需要安装python<br />
+在Ubuntu下打开终端输入  </p>
+<pre><code>apt install python
+</code></pre>
+
+<p>然后安装pip  </p>
+<pre><code>apt install python-pip
+</code></pre>
+
+<p>安装MkDocs  </p>
+<pre><code>pip install mkdocs
+</code></pre>
+
+<p>检查MkDocs是否安装成功  </p>
+<pre><code>mkdocs
+</code></pre>
+
+<p>如果出现一些MkDocs的相关信息，就说明安装好了  </p>
+<p>然后是git<br />
+博客嘛，肯定得给人看，所以我们要用github pages<br />
+安装git  </p>
+<pre><code>apt-get install git
+</code></pre>
+
+<p>检查git是否安装成功  </p>
+<pre><code>git
+</code></pre>
+
+<p>如果出现一些git的相关信息，就说明安装好了<br />
+我们进入下一步</p>
+<hr />
+<h2 id="_3">下一步</h2>
+<p>（好吧，我实在不知道该怎么起名了）<br />
+因为要使用github，所以<br />
+1. 先注册一个GitHub账户  <a href="https://github.com/">github</a><br />
+2. 创建一个公共仓库<br />
+3. 进入仓库，获得仓库地址<code>https://github.com/xxxxx/emmm</code></p>
+<p>然后我们在本地克隆一份<br />
+进入你想要的地址，输入</p>
+<pre><code>git clone https://github.com/xxxxx/emmm
+</code></pre>
+
+<p>进入仓库<br />
+创建MkDocs项目<br />
+输入</p>
+<pre><code>mkdocs new dei
+</code></pre>
+
+<p>即可创建<br />
+进入<code>dei</code><br />
+执行</p>
+<pre><code>mkdocs serve
+</code></pre>
+
+<p>他会给你一个网址<code>http://127.0.0.1:8000</code><br />
+在浏览器访问它，就可以看到默认主页了<br />
+现在大体上已经成了</p>
+<hr />
+<h2 id="_4">细节</h2>
+<p>（对，我就是个起名废）<br />
+写博客只需要将<code>.md</code>文件放在<code>docs/</code>目录中就行了<br />
+文件需要写成markdown，关于<a href="https://blog.tsunaley.cn/markdown/">markdown的语法</a>  </p>
+<hr />
+<p>MkDocs很多细节都是在<code>mkdocs.yml</code>中设置的，这里介绍几个<br />
+更多的参考官方文档<a href="https://www.mkdocs.org/user-guide/configuration/">Configuration-MkDcos</a>  </p>
+<hr />
+<p>进入<code>mkdocs.yml</code></p>
+<h3 id="site_name">site_name</h3>
+<pre><code>site_name: Tsunaley's blog
+</code></pre>
+
+<p>这个是作为主标题  </p>
+<h3 id="theme">theme</h3>
+<pre><code>theme: 'windmill'
+</code></pre>
+
+<p>这个是用于设置主题，我使用的就是<code>windmill</code>（第三方主题需要安装）<br />
+具体可以看 <a href="https://www.mkdocs.org/user-guide/custom-themes/">Custom themes - MkDocs</a>  </p>
+<h3 id="copyright">copyright</h3>
+<pre><code>copyright: Tsunaley All Rights Reserved.
+</code></pre>
+
+<p>这个是写在页脚的  </p>
+<h3 id="nav">nav</h3>
+<pre><code>nav: 
+- 主页: 'index.md'
+- 各种: 
+    - 新年快乐: 'xxxx.md'
+</code></pre>
+
+<p>这个是用于设置导航  </p>
+<hr />
+<h2 id="_5">部署</h2>
+<p>在终端执行</p>
+<pre><code>mkdocs gh-deploy
+</code></pre>
+
+<p>它会自动生成，期间会提示你输入账户名和密码，按提示来就好<br />
+如果报错可以试试</p>
+<pre><code>mkdocs gh-deploy --force
+</code></pre>
+
+<p>然后在GitHub的相应仓库的<code>setting</code>里的<code>github pages</code>能找到对应网页</p>
+<hr />
+<h2 id="_6">其他</h2>
+<p>关于如何设置域名咸鱼超还没摸索清楚，所以每次都是手动在GitHub的设置里添加的<br />
+这个等以后咸鱼超弄懂了再说吧<br />
+由于咸鱼超太菜了，这篇文章可能会有错误...<br />
+所以搜索引擎是个好东西<br />
+<a href="https://www.google.com/">google</a><br />
+<a href="https://www.bing.com/?mkt=zh-CN">bing</a><br />
+好了<br />
+咸鱼超滚去背军理了</p>
+
+  <br>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../markdown/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../markdown/" class="btn btn-xs btn-link">
+        MarkDown语法
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../happyny/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../happyny/" class="btn btn-xs btn-link">
+        新年快乐
+      </a>
+    </div>
+    
+  </div>
+
+    <br>
+</div>
+
+<footer class="col-md-12 wm-page-content"><p>Tsunaley All Rights Reserved.</p>
+  <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/gristlabs/mkdocs-windmill">Windmill</a> theme by Grist Labs.</p>
+</footer>
+
+</body>
+</html>

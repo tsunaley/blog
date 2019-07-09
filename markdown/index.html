@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    <link rel="shortcut icon" href="../img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>MarkDown语法 - Tsunaley's blog</title>
+    <link href="../css/bootstrap-3.3.7.min.css" rel="stylesheet">
+    <link href="../css/font-awesome-4.7.0.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/highlight.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/bootstrap-3.3.7.min.js"></script>
+    <script src="../js/highlight.pack.js"></script>
+    
+    <base target="_top">
+    <script>
+      var base_url = '..';
+      var is_top_frame = false;
+        
+        var pageToc = [
+          {title: "Markdown\u8bed\u6cd5", url: "#_top", children: [
+              {title: "Markdown\u7b80\u4ecb", url: "#markdown_1" },
+              {title: "Markdown\u5141\u8bb8\u517c\u5bb9html", url: "#markdownhtml" },
+              {title: "\u6bb5\u843d\u4e0e\u6362\u884c", url: "#_1" },
+              {title: "\u6807\u9898", url: "#_2" },
+          ]},
+          {title: "\u6700\u9ad8\u9636\u6807\u9898", url: "#_3", children: [
+              {title: "\u7b2c\u4e8c\u9636\u6807\u9898", url: "#_4" },
+          ]},
+          {title: "\u7b2c\u4e00\u9636", url: "#_5", children: [
+              {title: "\u7b2c\u4e8c\u9636", url: "#_6" },
+              {title: "\u533a\u5757\u5f15\u7528", url: "#_11" },
+              {title: "\u5217\u8868", url: "#_13" },
+              {title: "\u4ee3\u7801", url: "#_14" },
+              {title: "\u5206\u5272\u7ebf", url: "#_15" },
+              {title: "\u94fe\u63a5", url: "#_16" },
+              {title: "\u5f3a\u8c03", url: "#_17" },
+              {title: "\u56fe\u7247", url: "#_18" },
+              {title: "\u4e00\u4e9b\u60f3\u8bf4\u7684", url: "#_19" },
+          ]},
+        ];
+
+    </script>
+    <script src="../js/base.js"></script> 
+</head>
+
+<body>
+<script>
+if (is_top_frame) { $('body').addClass('wm-top-page'); }
+</script>
+
+
+
+<div class="container-fluid wm-page-content">
+  <a name="_top"></a>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav">
+      <a href="../blog_mkdocs/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../blog_mkdocs/" class="btn btn-xs btn-link">
+        使用MkDocs搭建个人博客
+      </a>
+    </div>
+    
+  </div>
+
+    
+
+    <h1 id="markdown">Markdown语法</h1>
+<blockquote>
+<p>时间：2019年1月17日</p>
+</blockquote>
+<hr />
+<h2 id="markdown_1">Markdown简介</h2>
+<p>了解一个东西最好的方法还是看它的官方文档啊<br />
+<a href="http://www.markdown.cn/">MarkDown语法说明</a><br />
+Markdown 的语法目标是：成为一种适用于网络的书写语言。<br />
+Markdown 的理念是，能让文档更容易读、写和随意改。  </p>
+<hr />
+<h2 id="markdownhtml">Markdown允许兼容html</h2>
+<p>不在 Markdown 涵盖范围之内的标签，都可以直接在文档里面用 HTML 撰写。不需要额外标注这是 HTML 或是 Markdown；只要直接加标签就可以了。  </p>
+<p>要制约的只有一些 HTML 区块元素――比如<code>&lt;div&gt;</code>、<code>&lt;table&gt;</code>、<code>&lt;pre&gt;</code>、<code>&lt;p&gt;</code> 等标签，必须在前后加上空行与其它内容区隔开，还要求它们的开始标签与结尾标签不能用制表符或空格来缩进。Markdown 的生成器有足够智能，不会在 HTML 区块标签外加上不必要的 <code>&lt;p&gt;</code> 标签。  </p>
+<p>例子如下，在 Markdown 文件里加上一段 HTML 表格：  </p>
+<pre><code>这是一个普通段落。
+
+&lt;table&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Foo&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+
+这是另一个普通段落。
+</code></pre>
+
+<hr />
+<h2 id="_1">段落与换行</h2>
+<p>一个 Markdown 段落是由一个或多个连续的文本行组成，它的前后要有一个以上的空行（空行的定义是显示上看起来像是空的，便会被视为空行。比方说，若某一行只包含空格和制表符，则该行也会被视为空行）。普通段落不该用空格或制表符来缩进。  </p>
+<p>换行则需按两个以上空格再回车</p>
+<hr />
+<h2 id="_2">标题</h2>
+<p>Markdown有两种标题形式，类<code>Setext</code>和类<code>atx</code>形式。<br />
+类<code>Setext</code>：<code>=</code>最高阶标题  <code>-</code>第二阶标题</p>
+<pre><code>最高标题
+=====
+第二阶标题
+---------
+</code></pre>
+
+<p>效果</p>
+<blockquote>
+<h1 id="_3">最高阶标题</h1>
+<h2 id="_4">第二阶标题</h2>
+</blockquote>
+<p>类<code>Atx</code>标题直接在标题前插入1~6个<code>#</code>，对应表示1~6阶标题</p>
+<pre><code># 第一阶
+
+## 第二阶
+
+### 第三阶
+
+#### 第四阶
+
+##### 第五阶
+
+###### 第六阶
+</code></pre>
+
+<p>效果</p>
+<blockquote>
+<h1 id="_5">第一阶</h1>
+<h2 id="_6">第二阶</h2>
+<h3 id="_7">第三阶</h3>
+<h4 id="_8">第四阶</h4>
+<h5 id="_9">第五阶</h5>
+<h6 id="_10">第六阶</h6>
+</blockquote>
+<hr />
+<h2 id="_11">区块引用</h2>
+<p>当我们需要引用一段别处的句子时，可以加入<code>&gt;</code>来表示引用（当然也可以单纯为了排版好看）  </p>
+<pre><code>&gt; 超超是聪明可爱机智善良勇敢无畏天生丽质  
+&gt; 霸气侧漏邪魅狂拽智商超群极具魅力温文尔雅风度翩翩  
+&gt;  
+&gt; 彬彬有礼天下无双眉清目秀吹弹可破人面桃花英俊潇洒  
+&gt; 气宇不凡玉树临风仪表堂堂风流倜傥面如冠玉风度翩翩  
+&gt; 美目盼兮清新俊逸酷到爆的小可爱
+</code></pre>
+
+<p>也可以只在段落的第一行前面加<code>&gt;</code></p>
+<pre><code>&gt; 超超是聪明可爱机智善良勇敢无畏天生丽质  
+霸气侧漏邪魅狂拽智商超群极具魅力温文尔雅风度翩翩  
+
+&gt; 彬彬有礼天下无双眉清目秀吹弹可破人面桃花英俊潇洒  
+气宇不凡玉树临风仪表堂堂风流倜傥面如冠玉风度翩翩  
+美目盼兮清新俊逸酷到爆的小可爱
+</code></pre>
+
+<p>效果</p>
+<blockquote>
+<p>超超是聪明可爱机智善良勇敢无畏天生丽质<br />
+霸气侧漏邪魅狂拽智商超群极具魅力温文尔雅风度翩翩  </p>
+<p>彬彬有礼天下无双眉清目秀吹弹可破人面桃花英俊潇洒<br />
+气宇不凡玉树临风仪表堂堂风流倜傥面如冠玉风度翩翩<br />
+美目盼兮清新俊逸酷到爆的小可爱</p>
+</blockquote>
+<p>引用的嵌套，只需要根据层次加上不同数量的<code>&gt;</code></p>
+<pre><code>&gt; 第一层
+&gt;
+&gt; &gt; 第二层
+&gt;
+</code></pre>
+
+<p>效果</p>
+<blockquote>
+<p>第一层</p>
+<blockquote>
+<p>第二层
+</p>
+</blockquote>
+</blockquote>
+<p>引用部分也可以使用其他markdown语法</p>
+<pre><code>&gt; ### 标题
+&gt;
+&gt; 列表  
+&gt; 1. 1  
+&gt; 2. 2
+</code></pre>
+
+<p>效果</p>
+<blockquote>
+<h3 id="_12">标题</h3>
+<p>列表 <br />
+1. 1<br />
+2. 2  </p>
+</blockquote>
+<hr />
+<h2 id="_13">列表</h2>
+<p>无序列表</p>
+<pre><code>* 1
+* 2
+* 3
+</code></pre>
+
+<p>效果</p>
+<blockquote>
+<ul>
+<li>1</li>
+<li>2</li>
+<li>3</li>
+</ul>
+</blockquote>
+<p>有序列表</p>
+<pre><code>1. 一
+2. 二
+3. 三
+</code></pre>
+
+<p>效果</p>
+<blockquote>
+<ol>
+<li>一</li>
+<li>二</li>
+<li>三</li>
+</ol>
+</blockquote>
+<hr />
+<h2 id="_14">代码</h2>
+<p>码农写博客肯定会引用到代码咯<br />
+要在 Markdown 中建立代码区块很简单，只要简单地缩进 4 个空格或是 1 个制表符就可以  </p>
+<pre><code>这是一个普通段落：
+
+    这是一个代码区块。
+</code></pre>
+
+<p>效果</p>
+<blockquote>
+<p>这是一个普通段落：</p>
+<pre><code>这是一个代码区块。
+</code></pre>
+</blockquote>
+<p>或者可以使用三个反引号<code>`</code>将中间的代码包起来就行了<br />
+效果</p>
+<pre><code>#include&lt;stdio.h&gt;
+int main(void)
+{
+    printf(&quot;Hello World&quot;);
+    return 0;
+}
+</code></pre>
+
+<hr />
+<h2 id="_15">分割线</h2>
+<p>在一行中用三个以上的星号、减号、底线来建立一个分隔线，行内不能有其他东西。你也可以在星号或是减号中间插入空格。下面每种写法都可以建立分隔线：</p>
+<pre><code>* * *
+
+***
+
+*****
+
+- - -
+
+---------------------------------------
+</code></pre>
+
+<hr />
+<h2 id="_16">链接</h2>
+<p>链接文字用[方括号]标记，用(圆括号)插入网址</p>
+<pre><code>[Tsunaley's blog](blog.tsunaley.cn)
+</code></pre>
+
+<p>效果</p>
+<blockquote>
+<p><a href="http://blog.tsunaley.cn">Tsunaley's blog</a></p>
+</blockquote>
+<hr />
+<h2 id="_17">强调</h2>
+<p>Markdown 使用星号<code>*</code>和底线<code>_</code>作为标记强调字词的符号</p>
+<pre><code>*single asterisks*
+
+_single underscores_
+
+**double asterisks**
+
+__double underscores__
+</code></pre>
+
+<p>效果</p>
+<blockquote>
+<p><em>single asterisks</em></p>
+<p><em>single underscores</em></p>
+<p><strong>double asterisks</strong></p>
+<p><strong>double underscores</strong></p>
+</blockquote>
+<p>用什么符号开启标签，就要用什么符号结束  </p>
+<p>可以直接插在文字里</p>
+<pre><code>这段文字里有*强调*。
+</code></pre>
+
+<p>效果</p>
+<blockquote>
+<p>这段文字里有<em>强调</em>。</p>
+</blockquote>
+<p>如果只是要在文字里加入普通的星号或底线，可以使用反斜线</p>
+<pre><code>这里我们只需要普通的\*和\_
+</code></pre>
+
+<p>效果</p>
+<blockquote>
+<p>这里我们只需要普通的*和_</p>
+</blockquote>
+<hr />
+<h2 id="_18">图片</h2>
+<ul>
+<li>一个!</li>
+<li>图片的替代文字用[方括号]括起来</li>
+<li>用图片网址放在(圆括号)</li>
+</ul>
+<pre><code>![Alt text](/path/to/img.jpg)
+</code></pre>
+
+<hr />
+<h2 id="_19">一些想说的</h2>
+<p>这里只整理了markdown的部分基础语法，想了解更多还是看官方文档吧，链接在上面。  </p>
+<p>一学期结束了<br />
+咸鱼超发现自己乱七八糟的学了一些东西<br />
+咸鱼超还是依旧咸鱼<br />
+咸鱼超现在很想回重庆<br />
+就酱</p>
+
+  <br>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav">
+      <a href="../blog_mkdocs/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../blog_mkdocs/" class="btn btn-xs btn-link">
+        使用MkDocs搭建个人博客
+      </a>
+    </div>
+    
+  </div>
+
+    <br>
+</div>
+
+<footer class="col-md-12 wm-page-content"><p>Tsunaley All Rights Reserved.</p>
+  <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/gristlabs/mkdocs-windmill">Windmill</a> theme by Grist Labs.</p>
+</footer>
+
+</body>
+</html>
